@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace PraseodymiumTDD
 {
-    class CustomList
+    public  class CustomList<T>
     {
+       
+
+        public void AddItem()
+        {
+            //increment count
+            
+            //item needs to land at next available index
+
+            //check to make sure it persists
+
+            //count == maxcapacity, we need to increase capacity and copy
+        }
     }
 }

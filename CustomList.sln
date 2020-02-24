@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomList", "CustomList\CustomList.csproj", "{F81E35C8-EA63-4AD9-8F4C-CB97D964CA13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PraseodymiumTDD", "CustomList\PraseodymiumTDD.csproj", "{F81E35C8-EA63-4AD9-8F4C-CB97D964CA13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject CustomList", "UnitTestProject CustomList\UnitTestProject CustomList.csproj", "{FFA01087-1DBB-458C-A70C-7A50CC710CBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F81E35C8-EA63-4AD9-8F4C-CB97D964CA13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F81E35C8-EA63-4AD9-8F4C-CB97D964CA13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F81E35C8-EA63-4AD9-8F4C-CB97D964CA13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFA01087-1DBB-458C-A70C-7A50CC710CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFA01087-1DBB-458C-A70C-7A50CC710CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFA01087-1DBB-458C-A70C-7A50CC710CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFA01087-1DBB-458C-A70C-7A50CC710CBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
