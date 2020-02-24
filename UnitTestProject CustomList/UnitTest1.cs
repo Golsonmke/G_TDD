@@ -72,12 +72,13 @@ namespace UnitTestProject_CustomList
             string expected;
             string string1 = "Test String 1";
             string string2 = "Test String 2";
-            expected = string1 + string2;
-            string actual = "Test String 1" + "Test String 2";
+            expected = "Test String 2";
+           
             //Act
             myList.Add(string1);
             myList.Add(string2);
-      
+
+            string actual = myList[1];
             //Assert
             Assert.AreEqual(expected, actual);
         }
@@ -102,12 +103,31 @@ namespace UnitTestProject_CustomList
             int actual;
            
             //Act
-            myList.Add();
-            myList.Add();
-            myList.Add();
-            myList.Add();
-            myList.Add();
-            actual = myList.IncreaseCapacity;
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            actual = myList.Capacity;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        public void IncreaseCapacity2()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int expected;
+            expected = 8;
+            int actual;
+
+            //Act
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            myList.Add(12);
+            actual = myList.Capacity;
             //Assert
             Assert.AreEqual(expected, actual);
         }

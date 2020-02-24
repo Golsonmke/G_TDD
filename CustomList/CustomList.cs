@@ -10,12 +10,12 @@ namespace PraseodymiumTDD
     {
        
 
-        public void AddItem()
+        public void Add()
         {
             //increment count
-            //if (count == item.Length)
-            //   Array.Resize(item, item.Length * 2)
-            //   item[count++] = item;
+            if (count == item.Length)
+             Array.Resize(item, item.Length * 2)
+             item[count++] = item;
 
             //item needs to land at next available index                       
 
