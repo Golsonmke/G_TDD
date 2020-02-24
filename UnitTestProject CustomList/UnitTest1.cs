@@ -81,17 +81,35 @@ namespace UnitTestProject_CustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        public void Add_Capacity()
+        public void Capacity()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
             int expected;
             expected = 4;
-            int actual = expected;
+            int actual;
             // Act
-            myList.Capacity(expected);
+            actual = myList.Capacity;
             //Assert
-            Assert.AreEqual(expected, actual)
+            Assert.AreEqual(expected, actual);
+        }
+        public void IncreaseCapacity()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int expected;
+            expected = 8;
+            int actual;
+           
+            //Act
+            myList.Add();
+            myList.Add();
+            myList.Add();
+            myList.Add();
+            myList.Add();
+            actual = myList.IncreaseCapacity;
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
 
 
@@ -99,6 +117,4 @@ namespace UnitTestProject_CustomList
             //Remove Test Methods
    
 }
-            //if (count == item.Length)
-            //   Array.Resize(item, item.Length * 2)
-            //   item[count++] = item;
+          
