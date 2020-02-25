@@ -1,33 +1,64 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PraseodymiumTDD
 {
-    public  class CustomList<T>
+    public class CustomList<T>
     {
-       
 
-        public void Add()
+        private int capacity;
+        private int count;
+        public T[] myArray;
+
+
+        public CustomList()
+        {
+            count = 0;
+            capacity = 4;
+            myArray = new T[Capacity];
+        }
+
+        public int Count { get { return count; } }
+        public int Capacity { get { return capacity; } set { capacity = value; } }
+        public T this[int i]
+        {
+            get
+            {
+                return myArray[i];
+            }
+            set
+            {
+                myArray[i] = value;
+            }
+        }
+
+
+        public void Add(T item)
         {
             //increment count
-            if (count == item.Length)
-             Array.Resize(item, item.Length * 2)
-             item[count++] = item;
 
-            //item needs to land at next available index                       
+            if (Count == capacity)
+            {
+                capacity = capacity * 2;
+                T[] temporaryArray = new T[Capacity];
+                
+                
+                for (int i = 0; i < count; i++)
+                {
+                    temporaryArray[i] = myArray[i];
+                }
 
-            //check to make sure it persists
+                myArray = temporaryArray;
 
-            //count == maxcapacity, we need to increase capacity and copy
-        }
-        public void RemoveItem()
-        {
+                //item needs to land at next available index  
 
 
 
+                //check to make sure it persists
+
+            }         //count == maxcapacity, we need to increase capacity and copy
+
+            myArray[count] = item;
+            count++;
         }
     }
 }
