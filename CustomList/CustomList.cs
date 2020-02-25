@@ -54,11 +54,15 @@ namespace PraseodymiumTDD
 
 
                 //check to make sure it persists
+                //count == maxcapacity, we need to increase capacity and copy
 
-            }         //count == maxcapacity, we need to increase capacity and copy
-
+            }
             myArray[count] = item;
             count++;
+        }
+        public void Remove(T item)
+        {
+
         }
     }
 }

@@ -57,10 +57,10 @@ namespace UnitTestProject_CustomList
             //Arrange
             CustomList<string> mylist = new CustomList<string>();
             string value1 = "Test Thing 1";
-            string expected = "Test Thing 1";
+            string expected = value1;
             string actual;
             //Act
-            //  myList.Add(value1);
+            mylist.Add(value1);
             actual = mylist[0];
             //Assert
             Assert.AreEqual(expected, actual);
@@ -96,6 +96,7 @@ namespace UnitTestProject_CustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Add_Increase_Capacity()
         {
             //Arrange
@@ -114,6 +115,7 @@ namespace UnitTestProject_CustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
         public void Add_Increase_Capacity2()
         {
             //Arrange
@@ -134,8 +136,54 @@ namespace UnitTestProject_CustomList
             Assert.AreEqual(expected, actual);
         }
         //Remove Test Methods
-        
+        [TestMethod]
+        public void Remove_OneValue_CountDecrement()
+        {
 
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int expected = 1;
+
+            //Act
+            myList.Remove(6);
+
+            //Assert
+            Assert.AreEqual(expected, myList.Count);
+
+        }
+        [TestMethod]
+        public void Remove_TwoValue_RemoveFromlist()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int expected = 10;
+            int value1 = 5;
+            int value2 = 10;
+            //Act
+            myList.Remove(value1);
+            myList.Remove(value2);
+
+            //Assert
+            Assert.AreEqual(expected, myList[1]);
+        }
+        [TestMethod]
+        public void Remove_ThreeValues_RemoveFromList()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+            int expected = 10;
+            int value1 = 5;
+            int value2 = 10;
+            int value3 = 15;
+            //Act
+            myList.Remove(value1);
+            myList.Remove(value2);
+            myList.Remove(value3);
+
+            //Assert
+            Assert.AreEqual(expected, myList[1]);
+
+        }
     }
 }
           
