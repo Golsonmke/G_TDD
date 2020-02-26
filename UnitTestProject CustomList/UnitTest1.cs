@@ -142,46 +142,55 @@ namespace UnitTestProject_CustomList
 
             //Arrange
             CustomList<int> myList = new CustomList<int>();
-            int expected = 1;
+            int expected = 4;
 
             //Act
-            myList.Remove(6);
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            myList.Remove(67);
 
             //Assert
             Assert.AreEqual(expected, myList.Count);
 
         }
         [TestMethod]
-        public void Remove_TwoValue_RemoveFromlist()
+        public void Remove_LastIndex_RemoveFromlist()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
-            int expected = 10;
-            int value1 = 5;
-            int value2 = 10;
+            int expected = 34;
+            
             //Act
-            myList.Remove(value1);
-            myList.Remove(value2);
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            myList.Remove(8);
 
             //Assert
-            Assert.AreEqual(expected, myList[1]);
+            Assert.AreEqual(expected, myList[3]);
         }
         [TestMethod]
-        public void Remove_ThreeValues_RemoveFromList()
+        public void Remove_AtIndex_RemoveIndex()
         {
             //Arrange
             CustomList<int> myList = new CustomList<int>();
-            int expected = 10;
-            int value1 = 5;
-            int value2 = 10;
-            int value3 = 15;
+            int expected = 56;
+            
             //Act
-            myList.Remove(value1);
-            myList.Remove(value2);
-            myList.Remove(value3);
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(56);
+            myList.Add(34);
+            myList.Remove(56);
 
             //Assert
-            Assert.AreEqual(expected, myList[1]);
+            Assert.AreEqual(expected, myList[2]);
 
         }
     }

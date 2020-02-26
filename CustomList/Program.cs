@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PraseodymiumTDD;
 
 namespace PraseodymiumTDD
 {
@@ -19,8 +14,9 @@ namespace PraseodymiumTDD
             numbers.Add(10);
            // numbers.Remove(6);
             Console.WriteLine(numbers);
-            List
-        
+            System.Collections.Generic.List<>
+
+
         }
     }
 }
