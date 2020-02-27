@@ -1,6 +1,9 @@
-﻿namespace PraseodymiumTDD
+﻿using System.Collections;
+using System.Linq;
+
+namespace PraseodymiumTDD
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
 
         private int capacity;
@@ -96,6 +99,30 @@
             }
             return item;
         }
-          
+
+        public IEnumerator GetEnumerator()
+        {
+            
+
+            for (int i = 0; i < Count; i++)
+            {
+                yield return myArray[i];
+            }
+        }
+
+        public static CustomList<T> Operator(CustomList<T> list1,CustomList<T>list2)
+        {
+             CustomList < T > List3 = new CustomList<T>();
+            for (int i = 0; i < list1.count; i++)
+            {
+                List3.Add(list1[i]);
+            }
+            for(int j = 0; j < list2.count; j++)
+            {
+                List3.Add(list2[j]);
+            }
+            return List3;
+        }
+         
     }
 }

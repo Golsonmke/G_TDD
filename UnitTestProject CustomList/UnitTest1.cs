@@ -227,7 +227,50 @@ namespace UnitTestProject_CustomList
             //Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void GetEnumerator_IEnumerator()
+        {
+            // Arrange
+            CustomList<int> myList = new CustomList<int>();
 
+            string expected = "67, 56, 98, 8, 34";
+            string actual;
+
+            //Act
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            actual = myList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void OperatorOverLoad_Plus()
+        {
+            //Arrange
+            CustomList<int> list1 = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> list2 = new CustomList<int>() { 2, 4, 6 };
+            CustomList<int> expected = [1, 2, 3, 4, 5, 6];
+
+            //Act
+            CustomList<int> actual = list1 + list2;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void OperatorOverLoad_Plus2()
+        {
+            //Arrange
+            CustomList<int> list1 = new CustomList<int>() { 1, 3, 5, 6 };
+            CustomList<int> list2 = new CustomList<int>() { 2, 4 };
+            CustomList<int> expected = { 1, 2, 3, 4, 5, 6 };
+            //Act
+            CustomList<int> actual = list1 + list2;
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
           

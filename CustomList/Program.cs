@@ -14,6 +14,7 @@ namespace PraseodymiumTDD
             numbers.Add(10);
             numbers.Remove(6);
             numbers.ToString();
+            numbers.GetEnumerator();
             Console.WriteLine(numbers);
             Console.ReadLine();
 
