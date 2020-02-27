@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PraseodymiumTDD
+﻿namespace PraseodymiumTDD
 {
     public class CustomList<T>
     {
@@ -35,7 +33,9 @@ namespace PraseodymiumTDD
         public void Add(T item)
         {
             //increment count
-
+            //item needs to land at next available index  
+            //check to make sure it persists
+            //count == maxcapacity, we need to increase capacity and copy
             if (Count == capacity)
             {
                 capacity = capacity * 2;
@@ -48,21 +48,50 @@ namespace PraseodymiumTDD
                 }
 
                 myArray = temporaryArray;
-
-                //item needs to land at next available index  
-
-
-
-                //check to make sure it persists
-                //count == maxcapacity, we need to increase capacity and copy
-
+               
             }
             myArray[count] = item;
             count++;
         }
         public void Remove(T item)
         {
-            
+            //Copy myArrray without item to be removed
+            // temp. array transfer to items
+            T[] temporaryArray = new T[capacity];
+            bool hasFound = false;
+           
+            for (int i = 0; i < count; i++)
+            {
+                if (myArray[i].Equals(item) && hasFound == false)
+                {
+                    hasFound = true;
+                    count--;
+                }
+
+                if (hasFound == true)
+                {
+
+                    temporaryArray[i] = myArray[i + 1];
+                }
+                else
+                {
+                    temporaryArray[i] = myArray[i];
+                }
+            }
+            myArray = temporaryArray;
         }
+            
+
+
+
+
+            // need to shift numbers or copy numbers to new Array
+
+
+
+
+
+           
+        
     }
 }
