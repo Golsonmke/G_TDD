@@ -76,22 +76,26 @@
                 else
                 {
                     temporaryArray[i] = myArray[i];
-                }
+                } // need to shift numbers or copy numbers to new Array
             }
             myArray = temporaryArray;
         }
-            
+        public override string ToString()
+        {
+            string item = "";
 
-
-
-
-            // need to shift numbers or copy numbers to new Array
-
-
-
-
-
-           
-        
+            for (int i = 0; i < count; i++)
+            {
+                myArray[i].ToString();
+                if(i == (count -1))
+                {
+                    item += (myArray[i]);
+                }
+               else { item += (myArray[i]) + "," + " "; }
+                                   
+            }
+            return item;
+        }
+          
     }
 }

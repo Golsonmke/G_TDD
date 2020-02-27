@@ -193,6 +193,41 @@ namespace UnitTestProject_CustomList
             Assert.AreEqual(expected, myList[2]);
 
         }
+        [TestMethod]
+        public void ToString_OneValue_ConvertInt()
+        {
+            // Arrange
+            CustomList<int> myList = new CustomList<int>();
+            
+            string expected = "67, 56, 98, 8, 34";
+            string actual;
+
+            //Act
+            myList.Add(67);
+            myList.Add(56);
+            myList.Add(98);
+            myList.Add(8);
+            myList.Add(34);
+            actual = myList.ToString();
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void ToString_TwoValues_ConvertInt()
+        {
+            //Arrange
+            CustomList<int> myList = new CustomList<int>();
+
+            var expected = "";
+            string actual;
+
+            //Act
+            actual = myList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
           
