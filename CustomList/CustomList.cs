@@ -17,7 +17,7 @@ namespace PraseodymiumTDD
             capacity = 4;
             myArray = new T[Capacity];
         }
-
+       
         public int Count { get { return count; } }
         public int Capacity { get { return capacity; } set { capacity = value; } }
         public T this[int i]
@@ -43,15 +43,15 @@ namespace PraseodymiumTDD
             {
                 capacity = capacity * 2;
                 T[] temporaryArray = new T[Capacity];
-                
-                
+
+
                 for (int i = 0; i < count; i++)
                 {
                     temporaryArray[i] = myArray[i];
                 }
 
                 myArray = temporaryArray;
-               
+
             }
             myArray[count] = item;
             count++;
@@ -62,7 +62,7 @@ namespace PraseodymiumTDD
             // temp. array transfer to items
             T[] temporaryArray = new T[capacity];
             bool hasFound = false;
-           
+
             for (int i = 0; i < count; i++)
             {
                 if (myArray[i].Equals(item) && hasFound == false)
@@ -90,19 +90,19 @@ namespace PraseodymiumTDD
             for (int i = 0; i < count; i++)
             {
                 myArray[i].ToString();
-                if(i == (count -1))
+                if (i == (count - 1))
                 {
                     item += (myArray[i]);
                 }
-               else { item += (myArray[i]) + "," + " "; }
-                                   
+                else { item += (myArray[i]) + "," + " "; }
+
             }
             return item;
         }
 
         public IEnumerator GetEnumerator()
         {
-            
+
 
             for (int i = 0; i < Count; i++)
             {
@@ -110,19 +110,18 @@ namespace PraseodymiumTDD
             }
         }
 
-        public static CustomList<T> Operator(CustomList<T> list1,CustomList<T>list2)
+        public static CustomList<T> operator+(CustomList<T> list1, CustomList<T> list2)
         {
-             CustomList < T > List3 = new CustomList<T>();
+            CustomList<T> List3 = new CustomList<T>();
             for (int i = 0; i < list1.count; i++)
             {
                 List3.Add(list1[i]);
             }
-            for(int j = 0; j < list2.count; j++)
+            for (int j = 0; j < list2.count; j++)
             {
                 List3.Add(list2[j]);
             }
             return List3;
         }
-         
-    }
+    }   
 }

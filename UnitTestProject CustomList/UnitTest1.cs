@@ -7,7 +7,7 @@ namespace UnitTestProject_CustomList
     [TestClass]
     public class CustomList
     {
-
+        private CustomList<string>[] myList;
 
         [TestMethod]
 
@@ -231,41 +231,45 @@ namespace UnitTestProject_CustomList
         public void GetEnumerator_IEnumerator()
         {
             // Arrange
-            CustomList<int> myList = new CustomList<int>();
 
-            string expected = "67, 56, 98, 8, 34";
-            string actual;
+            CustomList<string> myList = new CustomList<string> { "Test 1", "Test 2", "Test 3" };
+
+            CustomList<string> expected = new CustomList<string> { "Test 1", "Test 2", "Test 3" };
+            CustomList<string> actual = myList;
+            string expecteds = "Test 3";
+            string actuals = "";
+
+            foreach (string s in expected) 
+            {
+                actuals = s;
+            }
+
 
             //Act
-            myList.Add(67);
-            myList.Add(56);
-            myList.Add(98);
-            myList.Add(8);
-            myList.Add(34);
-            actual = myList.ToString();
+
+
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expecteds, actuals);
         }
         [TestMethod]
-        public void OperatorOverLoad_Plus()
+        public void Operator_OverLoad_Plus()
         {
             //Arrange
             CustomList<int> list1 = new CustomList<int>() { 1, 3, 5 };
             CustomList<int> list2 = new CustomList<int>() { 2, 4, 6 };
-            CustomList<int> expected = [1, 2, 3, 4, 5, 6];
-
+            CustomList<int> expected =  new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
             //Act
             CustomList<int> actual = list1 + list2;
             //Assert
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void OperatorOverLoad_Plus2()
+        public void Operator_OverLoad_Plus2()
         {
             //Arrange
             CustomList<int> list1 = new CustomList<int>() { 1, 3, 5, 6 };
             CustomList<int> list2 = new CustomList<int>() { 2, 4 };
-            CustomList<int> expected = { 1, 2, 3, 4, 5, 6 };
+            CustomList<int> expected = new CustomList<int> { 1, 2, 3, 4, 5, 6 };
             //Act
             CustomList<int> actual = list1 + list2;
             //Assert
